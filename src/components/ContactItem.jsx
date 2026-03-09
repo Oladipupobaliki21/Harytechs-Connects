@@ -1,28 +1,21 @@
-import { FaPhoneAlt,FaEnvelope,FaMapMarkerAlt } from "react-icons/fa";
-function ContactItem ({lael, value, icon}){
+import { FaPhoneAlt,FaEnvelope,FaMapMarkerAlt,  } from "react-icons/fa";
+function ContactItem ({label, value, icon}){
 
     const icons = {
         phone: <FaPhoneAlt className="text-blue-600"/>,
         email: <FaEnvelope className="text-blue-600"/>,
-        location: <FaMapMarkerAlt className="text-blue-600"/>
-
+        location:<FaMapMarkerAlt className="text-blue-600"/>,
+        
     }
 
 
-
-
     return(
-        <div className="flex justify-center gap-4 mt-4">
-            <div className="bg-gray-600 rounded-full p-3">
-                {/* <FaPhoneAlt/> */}
-            </div>
-            <div className="bg-gray-600 rounded-full p-3">
-                {/* <FaEnvelope/> */}
-            </div>
-            <div className="bg-gray-600 rounded-full p-3">
-                {/* <FaMapMarkerAlt/> */}
-            </div>
-
+        <div className=" bg-white rounded-lg flex  gap-4 mt-4 p-4 items-center ">
+           {icons [icon]}
+        <div>
+            <p className="text-sm text-gray-500">{label}</p>
+            <p className="font-medium ">{value}</p>
+        </div>
         </div>
     )
 }
