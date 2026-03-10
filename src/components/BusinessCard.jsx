@@ -20,15 +20,8 @@ function BusinessCard() {
         <Header name="Bilikis Oladipupo" title="Frontend Developer" />
 
         {/* Body */}
-        <div className="mt-16 px-4 sm:px-6 pb-6">
+        <div className="px-4 sm:px-6 pb-6">
 
-          {/* Name + title */}
-          <div className="text-center mb-4">
-            <h1 className="text-xl sm:text-2xl font-extrabold text-gray-800">
-              Bilikis Oladipupo
-            </h1>
-            <p className="text-sm text-blue-600 font-medium">Frontend Developer</p>
-          </div>
 
           {/* Bio */}
           <p className="text-sm sm:text-base text-gray-500 text-center mb-6 leading-relaxed px-2">
