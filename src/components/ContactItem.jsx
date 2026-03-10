@@ -19,7 +19,7 @@ function ContactItem({ label, value, icon, href }) {
                  border border-transparent hover:border-blue-200 hover:bg-blue-50
                  hover:shadow-md active:scale-[0.98] transition-all duration-200 cursor-pointer group"
     >
-      {/* Icon + text */}
+    
       <div className="flex items-center gap-3 min-w-0">
         <div className="p-2 bg-blue-50 group-hover:bg-blue-100 rounded-lg transition-colors">
           {icons[icon]}
@@ -30,7 +30,7 @@ function ContactItem({ label, value, icon, href }) {
         </div>
       </div>
 
-      {/* Arrow */}
+    
       <FaArrowRight
         className="text-gray-300 group-hover:text-blue-400 group-hover:translate-x-1 transition-all shrink-0"
         size={13}

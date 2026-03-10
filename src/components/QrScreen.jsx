@@ -8,17 +8,16 @@ function QrScreen({ onScan }) {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-950 text-white p-4 sm:p-8">
+    <div className="min-h-screen flex flex-col justify-center items-center bg-linear-to-br from-gray-900 via-gray-800 to-gray-950 text-white p-4 sm:p-8">
 
-      {/* Card container */}
+   
       <div className="w-full max-w-sm sm:max-w-md bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl shadow-2xl p-6 sm:p-10 flex flex-col items-center gap-6">
 
-        {/* Badge */}
+  
         <span className="text-xs font-semibold tracking-widest uppercase text-blue-400 bg-blue-900/40 px-4 py-1 rounded-full">
           Digital Business Card
         </span>
 
-        {/* Title */}
         <h1 className="text-2xl sm:text-3xl font-extrabold text-center leading-tight">
           Bilikis <span className="text-blue-400">Oladipupo</span>
         </h1>
@@ -26,7 +25,6 @@ function QrScreen({ onScan }) {
           Frontend Developer · Harytechs
         </p>
 
-        {/* QR Code */}
         <div className="bg-white p-4 sm:p-5 rounded-2xl shadow-xl ring-4 ring-blue-400/40 transition-transform hover:scale-105 duration-300">
           <QRCodeCanvas
             value={PAGE_URL}
@@ -42,9 +40,9 @@ function QrScreen({ onScan }) {
           Point your camera at the QR code to instantly view the business card
         </p>
 
-        {/* Action buttons */}
+      
         <div className="flex flex-col sm:flex-row gap-3 w-full">
-          {/* View Card */}
+      
           <button
             onClick={onScan}
             className="flex-1 bg-blue-600 hover:bg-blue-500 active:scale-95 transition-all duration-200 text-white font-semibold py-3 rounded-xl shadow-lg shadow-blue-700/40"
@@ -52,7 +50,7 @@ function QrScreen({ onScan }) {
             View Card
           </button>
 
-          {/* Share – opens QR modal only */}
+        
           <button
             onClick={() => setShowModal(true)}
             className="flex-1 flex items-center justify-center gap-2 bg-white/20 hover:bg-white/30 active:scale-95 transition-all duration-200 font-semibold py-3 rounded-xl shadow-lg"
@@ -63,12 +61,12 @@ function QrScreen({ onScan }) {
         </div>
       </div>
 
-      {/* Footer */}
+     
       <p className="mt-8 text-gray-600 text-xs text-center">
         Powered by Harytechs · {new Date().getFullYear()}
       </p>
 
-      {/* QR-only Share Modal */}
+      
       {showModal && (
         <div
           className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
@@ -89,7 +87,7 @@ function QrScreen({ onScan }) {
               </button>
             </div>
 
-            {/* QR code – full size for easy scanning */}
+            
             <div className="bg-white p-3 rounded-2xl ring-4 ring-blue-200 shadow-lg">
               <QRCodeCanvas
                 value={PAGE_URL}

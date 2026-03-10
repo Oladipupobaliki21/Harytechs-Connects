@@ -1,8 +1,8 @@
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaUserPlus } from "react-icons/fa";
-import profileImage from "../assets/profile.jpg";
+import profileImage from "../assets/profile3.png";
 
 function Header({ name, title }) {
-  /* ---------- vCard download (Add to Contact) ---------- */
+ 
   const handleAddContact = () => {
     const vCard = [
       "BEGIN:VCARD",
@@ -14,7 +14,7 @@ function Header({ name, title }) {
       "TEL;TYPE=CELL:+2348130542998",
       "EMAIL:oladipupobilikisarike@gmail.com",
       "URL:https://oladipupobaliki.vercel.app/",
-      "ADR;TYPE=HOME:;;17 Adeolu Egunsola St;Lagos;;Nigeria;",
+      "ADR;TYPE=HOME:;Lagos;;Nigeria;",
       "END:VCARD",
     ].join("\n");
 
@@ -28,22 +28,19 @@ function Header({ name, title }) {
   };
 
   return (
-    /* ── Banner area ── */
+  
     <div className="relative w-full">
 
-      {/* Gradient banner */}
       <div
-        className="h-36 sm:h-44 w-full"
-        style={{
-          background: "linear-gradient(135deg, #3a3a3a 0%, #1a1a1a 60%, #2d2d2d 100%)",
-        }}
+        className="h-36 sm:h-44 w-full bg-linear-to-br from-blue-500 to-gray-800 "
+        
       />
 
-      {/* Profile image – straddles banner and body */}
+     
       <div className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-36 sm:top-44">
         <div
           className="h-24 w-24 sm:h-28 sm:w-28 rounded-full border-4 border-white shadow-xl overflow-hidden"
-          style={{ background: "#6c3fc5" }}           /* purple fallback while img loads */
+          style={{ background: "#6c3fc5" }}           
         >
           <img
             src={profileImage}
@@ -53,21 +50,20 @@ function Header({ name, title }) {
         </div>
       </div>
 
-      {/* White body beneath the banner (name / title / icons / button) */}
       <div className="bg-white pt-14 sm:pt-16 pb-4 flex flex-col items-center gap-1 px-4">
 
-        {/* Name */}
+     
         <h1 className="text-lg sm:text-xl font-extrabold text-gray-900 tracking-tight">
           {name}
         </h1>
 
-        {/* Title */}
+     
         <p className="text-xs sm:text-sm text-gray-500 font-medium mb-3">{title}</p>
 
-        {/* Action icon row: Phone · Email · Location */}
+       
         <div className="flex items-center justify-center gap-6 mb-4">
 
-          {/* Phone */}
+        
           <a
             href="tel:+2348130542998"
             aria-label="Call"
@@ -78,7 +74,7 @@ function Header({ name, title }) {
             </span>
           </a>
 
-          {/* Email */}
+      
           <a
             href="mailto:oladipupobilikisarike@gmail.com"
             aria-label="Email"
@@ -89,9 +85,9 @@ function Header({ name, title }) {
             </span>
           </a>
 
-          {/* Location */}
+        
           <a
-            href="https://maps.google.com/?q=17+Adeolu+Egunsola+St,+Lagos,+Nigeria"
+            href="https://maps.google.com/?q=Lagos,+Nigeria"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Location"
@@ -103,7 +99,7 @@ function Header({ name, title }) {
           </a>
         </div>
 
-        {/* Add to Contact button */}
+       
         <button
           onClick={handleAddContact}
           className="flex items-center justify-center gap-2 w-full max-w-xs

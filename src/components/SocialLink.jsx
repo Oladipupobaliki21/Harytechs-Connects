@@ -10,7 +10,7 @@ function SocialLink({ name, link, icon }) {
                  border border-transparent hover:border-blue-200 hover:bg-blue-50
                  hover:shadow-md active:scale-[0.98] transition-all duration-200 group"
     >
-      {/* Icon + name */}
+  
       <div className="flex items-center gap-3">
         <div className="p-2 bg-white group-hover:bg-blue-100 rounded-lg shadow-sm transition-colors">
           {icon}
@@ -18,7 +18,7 @@ function SocialLink({ name, link, icon }) {
         <span className="text-sm font-semibold text-gray-700">{name}</span>
       </div>
 
-      {/* Arrow */}
+   
       <FaArrowRight
         className="text-gray-300 group-hover:text-blue-400 group-hover:translate-x-1 transition-all shrink-0"
         size={13}

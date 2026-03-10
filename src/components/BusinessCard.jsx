@@ -11,29 +11,29 @@ function BusinessCard() {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-700 to-gray-900 flex justify-center items-center p-4 sm:p-8">
+    <div className="min-h-screen bg-linear-to-br from-gray-700 to-gray-900 flex justify-center items-center p-4 sm:p-8">
 
-      {/* Card */}
+   
       <div className="w-full max-w-sm sm:max-w-md lg:max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden">
 
-        {/* Banner + Avatar */}
+       
         <Header name="Bilikis Oladipupo" title="Frontend Developer" />
 
-        {/* Body */}
+     
         <div className="px-4 sm:px-6 pb-6">
 
 
-          {/* Bio */}
+       
           <p className="text-sm sm:text-base text-gray-500 text-center mb-6 leading-relaxed px-2">
             Passionate Frontend Developer who enjoys building responsive and
             user-friendly web applications using React, JavaScript, HTML, CSS
             and Tailwind CSS.
           </p>
 
-          {/* Contact list */}
+        
           <ContactList />
 
-          {/* Social links */}
+        
           <div className="mt-6">
             <h3 className="font-semibold text-base sm:text-lg text-gray-700 mb-3">
               Find me on
@@ -44,7 +44,7 @@ function BusinessCard() {
         </div>
       </div>
 
-      {/* Floating Share FAB – opens QR modal only */}
+   
       <button
         onClick={() => setShowModal(true)}
         title="Share via QR code"
@@ -54,7 +54,7 @@ function BusinessCard() {
         <span className="hidden sm:inline">Share</span>
       </button>
 
-      {/* QR-only Share Modal */}
+   
       {showModal && (
         <div
           className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
@@ -75,7 +75,7 @@ function BusinessCard() {
               </button>
             </div>
 
-            {/* QR code – full size for easy scanning */}
+           
             <div className="bg-white p-3 rounded-2xl ring-4 ring-blue-200 shadow-lg">
               <QRCodeCanvas
                 value={PAGE_URL}
