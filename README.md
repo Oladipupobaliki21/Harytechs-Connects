@@ -49,5 +49,13 @@ ScreenShots
 
 <img width="659" height="630" alt="image" src="https://github.com/user-attachments/assets/8149253d-86f2-4197-b2c3-aa35aebbaede" />
 
+---
+## Links
+- Live Site URL:https://harytechs-connects.vercel.app/
+
+---
+## Author
+- GitHub - https://github.com/Oladipupobaliki21
+- Linkedin- www.linkedin.com/in/oladipupo-bilikis-3745b325a
 
 
