@@ -10,7 +10,7 @@ function QrScreen({ onScan }) {
 
       <div className="bg-white p-4 rounded-xl shadow-lg">
         <QRCodeCanvas
-          value="https://your-vercel-link.com"
+          value="https://harytechs-connects.vercel.app/"
           size={200}
         />
       </div>
