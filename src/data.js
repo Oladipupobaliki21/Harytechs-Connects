@@ -12,8 +12,8 @@ export const contactData = [
     },
 
     {
-        label: "My PorTfolio",
-        value: "",
+        label: "My Portfolio",
+        value: "https://oladipupobaliki.vercel.app/",
         icon:"website",
     },
 
@@ -33,13 +33,13 @@ export const contactData = [
 export const socialData = [
     {
         name: "Github",
-        link: "",
+        link: "https://github.com/Oladipupobaliki21",
         icon: "github",
     },
 
     {
         name:"Linkedln",
-        link: "",
+        link: "https://www.linkedin.com/in/oladipupo-bilikis-3745b325a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         icon:"linkedln"
     },
 ];

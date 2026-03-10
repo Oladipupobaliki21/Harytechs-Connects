@@ -3,7 +3,7 @@ import { contactData } from "../data";
 
 function ContactList() {
   return (
-    <div className=" ">
+    <div className=" w-2/4 shadow-md rounded-lg mx-auto">
 
       {contactData.map((contact, index) => (
         <ContactItem

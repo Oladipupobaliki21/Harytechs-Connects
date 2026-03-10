@@ -1,17 +1,20 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
-// import BusinessCard from "./components/BusinessCard"
+import { useState } from "react";
+import BusinessCard from "./components/BusinessCard";
+import QrScreen from "./components/QrScreen";
 
-// function App() {
-//   // const [count, setCount] = useState(0)
+function App() {
 
-//   return (
-//    <div className="min-h-screen flex items-center justify-center bg-gray-400">
-//     <BusinessCard/>
-//    </div>
-//   )
-// }
+  const [showCard, setShowCard] = useState(false);
 
-export default App
+  return (
+    <>
+      {showCard ? (
+        <BusinessCard />
+      ) : (
+        <QrScreen onScan={() => setShowCard(true)} />
+      )}
+    </>
+  );
+}
+
+export default App;

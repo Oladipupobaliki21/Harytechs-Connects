@@ -21,7 +21,7 @@
 // }
 // export default ContactItem;
 
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaGlobe, FaBriefcase, FaGithub, FaLinkedin } from "react-icons/fa";
 
 function ContactItem({ label, value, icon }) {
 
@@ -29,6 +29,9 @@ function ContactItem({ label, value, icon }) {
     phone: <FaPhoneAlt className="text-blue-600" />,
     email: <FaEnvelope className="text-blue-600" />,
     location:<FaMapMarkerAlt className="text-blue-600" />,
+    website: <FaGlobe className="text-blue-600" />,
+    company: <FaBriefcase className="text-blue-600" />,
+   
   };
 
   return (

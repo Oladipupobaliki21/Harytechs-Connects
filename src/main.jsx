@@ -9,8 +9,5 @@ import BusinessCard from './components/BusinessCard.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BusinessCard/>
-  
-   
-   
   </StrictMode>,
 )

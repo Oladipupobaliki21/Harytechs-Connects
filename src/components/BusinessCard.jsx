@@ -83,7 +83,7 @@ function BusinessCard() {
   return (
     <div className="min-h-screen bg-linear-to-br from-gray-700 to-gray-900 flex justify-center items-center p-6">
 
-      <div className="w-full max-w-sm md:max-w-md lg:max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden">
+      <div className="w-full bg-white rounded-2xl shadow-2xl overflow-hidden">
 
         <Header
           name="Bilikis Oladipupo"
@@ -92,15 +92,17 @@ function BusinessCard() {
 
         <div className="mt-28 px-6">
 
-          <p className="text-sm md:text-base text-gray-600 text-center mb-6 leading-relaxed">
+          <p className="text-sm md:text-base text-gray-600 text-center mb-6 leading-relaxed ">
             Passionate Frontend Developer who enjoys building responsive
             and user-friendly web applications using React, JavaScript,
             HTML, CSS and Tailwind CSS.
           </p>
+            <div className="flex items-center justify-center "> 
+           <ContactList />
+            </div>
+        
 
-          <ContactList />
-
-          <div className="mt-8 text-center ">
+          <div className="mt-8  ">
             <h3 className="font-semibold text-lg mb-3">Find me on</h3>
             <SocialLinks />
           </div>
