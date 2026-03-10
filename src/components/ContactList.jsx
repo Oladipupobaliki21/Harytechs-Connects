@@ -3,8 +3,7 @@ import { contactData } from "../data";
 
 function ContactList() {
   return (
-    <div className=" w-2/4 shadow-md rounded-lg mx-auto">
-
+    <div className="w-full space-y-1 rounded-xl overflow-hidden">
       {contactData.map((contact, index) => (
         <ContactItem
           key={index}
@@ -13,7 +12,6 @@ function ContactList() {
           icon={contact.icon}
         />
       ))}
-
     </div>
   );
 }

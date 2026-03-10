@@ -1,34 +1,16 @@
-
-
-import{ FaPhoneAlt, FaEnvelope, FaMapMarkerAlt} from "react-icons/fa";
-
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import profileImage from "../assets/profile.jpg";
 
 function Header({ name, title }) {
   return (
-    <div className="bg-linear-to-r from-gray-500 to-gray-700 h-56 flex flex-col relative justify-center items-center">
+    <div className="relative bg-gradient-to-r from-gray-600 to-gray-800 h-44 sm:h-52 flex flex-col justify-start items-center pt-6">
 
+      {/* Profile image – centered, overlapping the bottom of the banner */}
       <img
         src={profileImage}
         alt="Profile"
-        className="h-28 w-28 rounded-full border-4 border-white object-cover -bottom-14"
+        className="absolute -bottom-14 h-24 w-24 sm:h-28 sm:w-28 rounded-full border-4 border-white object-cover shadow-xl"
       />
-
-      <div className="flexx flex-col gap-30 -bottom-24 text-center">
-        <h1 className="text-xl font-bold text-black">{name}</h1>
-        <p className="text-gray-500">{title}</p>
-      </div>
-        <div className="flex justify-center gap-4 mt-64 absolute" >
-          <div className="p-4 bg-white rounded-full">
-            <FaPhoneAlt className="text-black" />
-          </div>
-          <div className="">
-            <FaEnvelope className="text-blue-600" />
-          </div>
-          <div>
-            <FaMapMarkerAlt className="text-blue-600" />
-          </div>
-        </div>
     </div>
   );
 }
