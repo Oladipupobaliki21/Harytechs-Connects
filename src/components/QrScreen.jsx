@@ -1,40 +1,11 @@
 import { QRCodeCanvas } from "qrcode.react";
 import { useState } from "react";
-import { FaShareAlt, FaCheckCircle } from "react-icons/fa";
+import { FaShareAlt, FaTimes } from "react-icons/fa";
 
 const PAGE_URL = "https://harytechs-connects.vercel.app/";
 
 function QrScreen({ onScan }) {
-  const [shared, setShared] = useState(false);
-  const [showQrModal, setShowQrModal] = useState(false);
-
-  const handleShare = async () => {
-    const shareUrl = PAGE_URL;
-
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: "Bilikis Oladipupo – Digital Business Card",
-          text: "Scan this QR code to view my digital business card!",
-          url: shareUrl,
-        });
-        setShared(true);
-        setTimeout(() => setShared(false), 2500);
-      } catch (err) {
-        // User cancelled or error – fall back to copy
-        fallbackCopy(shareUrl);
-      }
-    } else {
-      fallbackCopy(shareUrl);
-    }
-  };
-
-  const fallbackCopy = (url) => {
-    navigator.clipboard.writeText(url).then(() => {
-      setShared(true);
-      setTimeout(() => setShared(false), 2500);
-    });
-  };
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-950 text-white p-4 sm:p-8">
@@ -81,26 +52,13 @@ function QrScreen({ onScan }) {
             View Card
           </button>
 
-          {/* Share */}
+          {/* Share – opens QR modal only */}
           <button
-            onClick={handleShare}
-            className={`flex-1 flex items-center justify-center gap-2 font-semibold py-3 rounded-xl shadow-lg transition-all duration-200 active:scale-95 ${
-              shared
-                ? "bg-green-600 shadow-green-700/40"
-                : "bg-white/20 hover:bg-white/30 shadow-white/10"
-            }`}
+            onClick={() => setShowModal(true)}
+            className="flex-1 flex items-center justify-center gap-2 bg-white/20 hover:bg-white/30 active:scale-95 transition-all duration-200 font-semibold py-3 rounded-xl shadow-lg"
           >
-            {shared ? (
-              <>
-                <FaCheckCircle className="text-white" />
-                <span>Copied!</span>
-              </>
-            ) : (
-              <>
-                <FaShareAlt className="text-white" />
-                <span>Share QR</span>
-              </>
-            )}
+            <FaShareAlt className="text-white" />
+            <span>Share QR</span>
           </button>
         </div>
       </div>
@@ -110,24 +68,46 @@ function QrScreen({ onScan }) {
         Powered by Harytechs · {new Date().getFullYear()}
       </p>
 
-      {/* Share QR Modal (shown when share button opens full-screen QR for screenshot) */}
-      {showQrModal && (
+      {/* QR-only Share Modal */}
+      {showModal && (
         <div
-          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
-          onClick={() => setShowQrModal(false)}
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+          onClick={() => setShowModal(false)}
         >
           <div
-            className="bg-white rounded-3xl p-8 flex flex-col items-center gap-4 max-w-xs w-full"
+            className="bg-white rounded-3xl p-8 sm:p-10 flex flex-col items-center gap-5 w-full max-w-xs sm:max-w-sm shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <h2 className="text-gray-800 font-bold text-lg">Scan to Share</h2>
-            <QRCodeCanvas value={PAGE_URL} size={220} level="H" bgColor="#ffffff" fgColor="#1e3a5f" />
-            <p className="text-gray-500 text-xs text-center">
-              Scan this with any camera app
+            {/* Modal header */}
+            <div className="flex w-full justify-between items-center">
+              <h2 className="text-gray-800 font-bold text-lg">Scan to Visit</h2>
+              <button
+                onClick={() => setShowModal(false)}
+                className="text-gray-400 hover:text-gray-700 transition"
+              >
+                <FaTimes size={20} />
+              </button>
+            </div>
+
+            {/* QR code – full size for easy scanning */}
+            <div className="bg-white p-3 rounded-2xl ring-4 ring-blue-200 shadow-lg">
+              <QRCodeCanvas
+                value={PAGE_URL}
+                size={220}
+                bgColor="#ffffff"
+                fgColor="#1e3a5f"
+                level="H"
+                includeMargin={false}
+              />
+            </div>
+
+            <p className="text-gray-500 text-xs sm:text-sm text-center">
+              Scan this QR code with your camera to open the business card
             </p>
+
             <button
-              onClick={() => setShowQrModal(false)}
-              className="bg-gray-800 text-white px-6 py-2 rounded-xl hover:bg-gray-700 transition"
+              onClick={() => setShowModal(false)}
+              className="w-full py-3 rounded-xl bg-gray-900 text-white font-semibold hover:bg-gray-700 transition active:scale-95"
             >
               Close
             </button>
